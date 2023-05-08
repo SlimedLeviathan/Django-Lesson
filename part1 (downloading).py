@@ -62,5 +62,25 @@
 # tests.py (ngl idk, haven't used it)
 # views.py - inside of this file we program all of the python code behind every page of the website
 
+# we need to add one last file here that will allow us to more easily change urls in the future
+
+# Add a file called urls.py inside of the appName file or whatever name you made for the app
+# This will contain all of our code for the different pages inside this app
+
+# We also need to change code inside of the previous urls.py inside of the siteName folder we made originaly
+#                   add in this \/
+from django.urls import path, include
+
+urlpatterns = [
+    # inside of urlpatterns, add the following code
+    path('appName/', include('appName.urls')),
+    
+    # This code looks at the url and if it contains appName, it will look at all of the urls inside of our appName/urls.py file
+
+    # This is already inside of the file
+    # path('admin/', admin.site.urls),
+
+] 
+
 # Now that the setup is complete we'll finish this part and go to part 2, where we'll be testing the website and setting up some basic pages for the website
 # don't be afraid to go off the path I set down in the next couple of parts, use the steps i use to make whatever you want
