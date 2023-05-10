@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -9,4 +9,7 @@ def page(request):
 
     # To send something back we return an HttpRepsonse with a string in it that gets displayed on the page for the user
     numberOfVisits += 1
-    return HttpResponse(f'People Visited This site since Last Restart: {numberOfVisits}')
+
+    context = {'visits':numberOfVisits}
+
+    return render(request, 'main.html', context = context)
